@@ -16,24 +16,22 @@ int main()
 {
 
     optimize();
-
-    ll n;
+    int n;
     cin >> n;
-    ll x = max(n - (n / 2),(n/2));
-    
+    string s;
+    cin >> s;
 
-    ll a[n + 1];
+    int ans = 0;
     for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
+        if (s[i] == '8')
+        {
+            ans++;
+        }
     }
-    sort(a, a + n, greater<ll >());
-    ll  z = accumulate(a, a + x, 0);
-    // cout << z << endl;
-    ll  y = accumulate(a + x , a + n, 0);
-    // cout << y << endl;
-    ll  ans = z * z + y * y;
-    cout << ans << endl;
+    int z = floor(n/ 11);
+   // cout<<ans<<endl;
+    cout << min(ans, z) << endl;
     return 0;
 }
 // I guess it's time to bury your ass with the chrome
